@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack-a-Mole | Home</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+</head>
+
+<body class="min-vh-100 d-flex flex-column bg-success">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Whack-a-Mole</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./highscores.html">High Scores</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1 d-flex flex-wrap justify-content-center">
+    <img id="first-mole" class="align-self-center" alt="mole" src="./assets/img/101-1019722_cute-mole-clipart-transparent-mole-clipart.png">
+    <div class="text-white timer d-none">
+      <h3>Timer: 0</h3>
+    </div>
+    <div class="text-white score d-none">
+      <h3>Score: 0</h3>
+    </div>
+    <div class="container min-h-100 d-none">
+      <div class="row mt-4 block">
+        <div id="0" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+          </div>
+        </div>
+        <div id="1" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+        <div id="2" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+      </div>
+      <div class="row block">
+        <div id="3" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+        <div id="4" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+        <div id="5" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+      </div>
+      <div class="row block">
+        <div id="6" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+        <div id="7" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+        <div id="8" class="col">
+          <div class="bg-dark rounded-circle h-50 mt-4">
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div  id="begin-button" class="flex-grow-1 d-flex justify-content-center d-none">
+    <button type="button" class="btn btn-lg btn-primary btn-block align-self-center mx-4 py-4">
+      Begin!
+    </button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+    integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+.block {
+  height: 33.33%;
+}
+
+.mole {
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  left: 0;
+  right: 0;
+}
+
+.mole2 {
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  left: 0;
+  right: 0;
+}
+
+.timer {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  margin-left: 8px;
+}
+
+.score {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  margin-right: 8px;
+}
+
+.button1 {
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  left: 0;
+  right: 0;
+}
+
+/* #begin-button {
+  display: none !important;
+} */
