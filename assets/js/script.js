@@ -18,14 +18,16 @@ var moleTimeout;
 beginButtonEl.addEventListener("click", begin)
 
 function begin(){
-  beginButtonEl.setAttribute("style", "display: none !important");
-  firstMoleImgEl.setAttribute("style", "display: none !important");
-  timerDivEl.setAttribute("style", "display: block !important");
-  scoreDivEl.setAttribute("style", "display: block !important");
-  containerDivEl.setAttribute("style", "display: block !important");
+  if(event.target.matches("button")){
+    beginButtonEl.setAttribute("style", "display: none !important");
+    firstMoleImgEl.setAttribute("style", "display: none !important");
+    timerDivEl.setAttribute("style", "display: block !important");
+    scoreDivEl.setAttribute("style", "display: block !important");
+    containerDivEl.setAttribute("style", "display: block !important");
 
-  timerInterval = setInterval(tickUp, 1000);
-  destroyOldMoleAndCreateNewMole();
+    timerInterval = setInterval(tickUp, 1000);
+    destroyOldMoleAndCreateNewMole();
+  }
 }
 
 function tickUp(){
@@ -103,20 +105,3 @@ function saveScoreAndMoveUser() {
   }
 
 }
-
-
-
-
-// Not Ready
-
-// function setMoleTimeout() {
-//   moleTimeout = setTimeout(destroyOldMoleAndCreateNewMole, 2000);
-// }
-
-// if(moleTimeout){
-  //   console.log("moleTimeout")
-  //   clearTimeout(moleTimeout)
-  // }else{
-  //   console.log("moleTimeout2")
-  // }
-  // moleTimeout = setTimeout(destroyOldMoleAndCreateNewMole, 2000);
