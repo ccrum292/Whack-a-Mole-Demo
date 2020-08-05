@@ -3,6 +3,10 @@ var firstMoleImgEl = document.querySelector("#first-mole");
 var timerDivEl = document.querySelector(".timer");
 var scoreDivEl = document.querySelector(".score");
 var containerDivEl = document.querySelector(".container");
+var saveFormEl = document.querySelector("#save-form");
+var saveInputEl = document.querySelector("#name-input")
+var saveButtonEl = document.querySelector("#save-button")
+var main = document.querySelector("main");
 
 var timerInterval;
 var time = 0;
@@ -28,7 +32,6 @@ function tickUp(){
   time++;
   timerDivEl.children[0].textContent = "Timer: " + time;
 
-  // check if user ran out of time
   if (time >= timeCap) {
     end();
   }
@@ -48,14 +51,6 @@ function destroyOldMoleAndCreateNewMole() {
 
   moleLocationId = randomLocationGenerator();
   document.getElementById(moleLocationId).appendChild(newMoleImg);
-
-  // if(moleTimeout){
-  //   console.log("moleTimeout")
-  //   clearTimeout(moleTimeout)
-  // }else{
-  //   console.log("moleTimeout2")
-  // }
-  // moleTimeout = setTimeout(destroyOldMoleAndCreateNewMole, 2000);
 }
 
 function countWhack() {
@@ -64,10 +59,6 @@ function countWhack() {
   destroyOldMoleAndCreateNewMole()
 }
 
-
-function setMoleTimeout() {
-  moleTimeout = setTimeout(destroyOldMoleAndCreateNewMole, 2000);
-}
 
 function randomLocationGenerator() {
   var randomLocation = Math.floor(Math.random()*9);
@@ -82,5 +73,50 @@ function randomLocationGenerator() {
 function end() {
   clearInterval(timerInterval)
   timerDivEl.setAttribute("style", "display: none !important");
+  scoreDivEl.setAttribute("style", "display: none !important");
   containerDivEl.setAttribute("style", "display: none !important");
+  saveFormEl.setAttribute("style", "display: block !important");
+  main.classList.add("align-items-center");
 }
+
+
+saveButtonEl.addEventListener("click", saveScoreAndMoveUser);
+
+
+function saveScoreAndMoveUser() {
+  event.preventDefault();
+  
+  var name = saveInputEl.value.trim();
+
+  if (name !== "") {
+    var localStorageHighScores = JSON.parse(window.localStorage.getItem("localStorageHighScores")) || [];
+
+    var newEntry = {
+      name: name,
+      score: numberOfWhacks
+    }
+
+    localStorageHighScores.push(newEntry);
+    window.localStorage.setItem("localStorageHighScores", JSON.stringify(localStorageHighScores))
+
+    window.location.href = "highscores.html";
+  }
+
+}
+
+
+
+
+// Not Ready
+
+// function setMoleTimeout() {
+//   moleTimeout = setTimeout(destroyOldMoleAndCreateNewMole, 2000);
+// }
+
+// if(moleTimeout){
+  //   console.log("moleTimeout")
+  //   clearTimeout(moleTimeout)
+  // }else{
+  //   console.log("moleTimeout2")
+  // }
+  // moleTimeout = setTimeout(destroyOldMoleAndCreateNewMole, 2000);
